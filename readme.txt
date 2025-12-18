@@ -30,7 +30,11 @@ cp resnet50-11ad3fa6.pth ~/.cache/torch/hub/checkpoints/
 
 5、运行命令
 
+chatgpt版
 streamlit run app/main.py
+
+谷歌版
+streamlit run app/app.py
 
 
 ----------------------------------------------------------------
