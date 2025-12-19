@@ -1,3 +1,5 @@
+确保Nvidia的显卡驱动已经安装成功!
+
 拉取项目镜像
 
 git clone https://github.com/zhangfanxp/image-dedup-system2.git
@@ -50,13 +52,28 @@ vi ~/.zshrc
 
 文件末尾加入:
 
-alias chachong='cd ~/Downloads/image-dedup-system && source .venv/bin/activate && streamlit run app/main.py'
+alias chachong='cd /home/用户名/env/image-dedup-system && source .venv/bin/activate && streamlit run app/main.py'
 
 保存并退出.
+(用户名处填写你在ubuntu下的登陆账号,如:frank1999,zhangfanxp等)
 
 更新配置文件
 source ~/.zshrc
 
 命令行输入:
 chachong 回车即可!
+
+---------------------------------
+
+设置开机自动启动(无需登陆ubuntu)
+
+1、将文件 image-dedup.service 拷贝至 /etc/systemd/system/ 路径下;
+
+2、重新加载systemd文件:
+
+ sudo systemctl daemon-reload
+
+3、启动服务,并设置为开机自动启动模式:
+
+ sudo systemctl enable image-dedup.service
 
