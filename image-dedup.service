@@ -1,0 +1,24 @@
+[Unit]
+Description=Image Dedup System Streamlit App
+# 表示在网络服务准备好之后再启动
+After=network.target
+
+[Service]
+# 替换 frank2000 为您在服务器上的实际用户名
+User=frank2000
+# 替换 frank2000 为您的实际用户组 (通常和用户名相同)
+Group=frank2000
+
+# 设置工作目录
+
+WorkingDirectory=/home/frank2000/env/image-dedup-system2
+# 核心启动命令
+# 这里我们直接使用虚拟环境中的可执行文件,而不是 'source'
+ExecStart=/home/frank2000/env/image-dedup-system2/.venv/bin/streamlit run app/app.py --server.port 8501 --server.address 0.0.0
+
+# 如果服务失败,则自动重启
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
