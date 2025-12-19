@@ -1,6 +1,6 @@
 拉取项目镜像
 
-git clone https://github.com/zhangfanxp/image-dedup-system.git
+git clone https://github.com/zhangfanxp/image-dedup-system2.git
 
 1、创建uv虚拟环境并激活
 
